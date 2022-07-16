@@ -14,7 +14,13 @@
  * @returns {boolean}
  */
 function checkTicket(number) {
-    return undefined;
+    const arr =number.split('').map( s => +s );
+    if((arr[0]+arr[1]+arr[2])===(arr[3]+arr[4]+arr[5])){
+        return true
+    }
+    return false;
 }
+checkTicket('123032');
+
 
 module.exports = checkTicket;

@@ -13,7 +13,30 @@
  * @returns {number[]}
  */
 function union(a, b) {
-    return undefined;
+    function compareNumbers(a, b) {
+        return a - b;
+      }
+    const arr=[]
+    const obj={}
+    for(el of a){
+        obj[el]=false;
+    }
+    for(el of b){
+        if(typeof obj[el] !== "undefined"){
+        obj[el]=true;}
+    }
+    console.log(obj)
+for(let key in obj){
+    if(obj[key]){
+   arr.push(+key)
+    }
+   
+
 }
+
+return arr.sort(compareNumbers)
+
+}
+
 
 module.exports = union;

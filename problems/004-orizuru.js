@@ -19,7 +19,13 @@
  * второй элемент – Катей, третий – Сережей
  */
 function computeOrizurus(total) {
-    return undefined;
+    const arr=[];
+    const x=Math.floor(total/6) 
+    arr.push(x)
+    arr.push(total-2*x)
+    arr.push(x)
+    return arr;
 }
+computeOrizurus(11)
 
 module.exports = computeOrizurus;

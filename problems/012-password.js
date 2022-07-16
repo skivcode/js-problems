@@ -18,7 +18,36 @@
  * @returns {boolean}
  */
 function validatePassword(password) {
-    return undefined;
+    let Length=function (){ 
+
+  return password.length < 7 ? false : true
+    
+    }
+
+ let UpperCase=function (){ 
+    for(char of password){
+    if(char===char.toUpperCase() && !parseInt(char) ){
+        return true
+    }
+
+}}
+let LowerCase=function (){ for(char of password){
+    if(char===char.toLowerCase()){
+        return true
+    }
+
+}}
+let Number=function (){for(char of password){
+    if(parseInt(char)){
+        return true
+    }
+}}
+// console.log(Number())
+// console.log(LowerCase())
+// console.log(UpperCase())
+// console.log(Length())
+ return Number() && LowerCase() && UpperCase() && Length() ? true: false
 }
+validatePassword('abcdef7')
 
 module.exports = validatePassword;
