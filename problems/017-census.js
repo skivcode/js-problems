@@ -13,7 +13,22 @@
  * @returns {undefined|number}
  */
 function census(list) {
-    return -1;
+    let res = undefined;
+    let age = 0;
+    let i = 0;
+    for (el of list) {
+        if (el.gender == "Male" && el.age > age) {
+            age = el.age;
+
+            res = i + 1;
+        }
+        i++;
+    }
+    return res;
 }
+census([
+    { age: 12, gender: "Male" },
+    { age: 40, gender: "Male" },
+]);
 
 module.exports = census;
