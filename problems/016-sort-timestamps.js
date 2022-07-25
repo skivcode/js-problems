@@ -9,7 +9,23 @@
  * @returns {string[]} отсортированный по возрастанию массив временных моментов
  */
 function sortTimestamps(list) {
-    return undefined;
-}
+    list=list.map((str)=>'2022-01-01T'+str+'.417Z')
+    function dateSort(a,b){
+        console.log(Date.parse(b));
+        console.log(Date.parse(a));
+        if(Date.parse(b)>Date.parse(a)){
+            return -1
+        }
+        if(Date.parse(b)<Date.parse(a)){
+            return 1
+        }
+    return 0
+    }
+   
+return list.sort(dateSort).map((el)=>el.slice(el.indexOf('T')+1,el.indexOf('.')))
+
+} 
+
+
 
 module.exports = sortTimestamps;
