@@ -26,9 +26,6 @@ function census(list) {
     }
     return res;
 }
-census([
-    { age: 12, gender: "Male" },
-    { age: 40, gender: "Male" },
-]);
+
 
 module.exports = census;
