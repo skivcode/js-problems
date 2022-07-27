@@ -9,8 +9,11 @@
  * @param {Array.<number|[]>} array
  * @returns {number[]}
  */
-function flatten(array) {
-    return undefined;
+
+function flatten(array) {  
+    return array.reduce((result, item)=> {
+        return result.concat(Array.isArray(item) ? flatten(item) : item);
+    }, []);
 }
 
 module.exports = flatten;
