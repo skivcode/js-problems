@@ -10,7 +10,23 @@
  * @returns {string}
  */
 function rle(value) {
-    return undefined;
+    let counter=0
+   const  res=[]
+    value=value.split('')
+    for(i=0;i<value.length;i++){
+        if(value[i]!=value[i+1]&& counter===0){
+            res.push(value[i])
+            }
+            else if(value[i]!=value[i+1]&& counter!=0){
+                counter++
+                res.push(counter)
+                res.push(value[i])
+                counter=0
+            }else{
+                counter++
+            }
+    }
+    return res.join().replace(/,/g,'')
 }
 
 module.exports = rle;
