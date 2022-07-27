@@ -14,7 +14,24 @@
  * @returns {string}
  */
 function hexToRgb(color) {
-    return undefined;
+    const arr = [];
+    color = color.replace("#", "").split("");
+    console.log(color);
+    if (color.length === 3) {
+        const hexColor = color
+            .map((el) => el + el)
+            .map((el) => parseInt(el, 16))
+            .join(", ");
+        console.log("rgb(" + hexColor + ")");
+        return "rgb(" + hexColor + ")";
+    }
+    for (i = 0; i < color.length; i += 1) {
+        arr.push(color[i] + color[++i]);
+        console.log(arr)
+    }
+    const hexColor = arr.map((el) => parseInt(el, 16)).join(", ");
+    console.log("rgb(" + hexColor + ")");
+    return "rgb(" + hexColor + ")";
 }
-
+hexToRgb('#800080');
 module.exports = hexToRgb;
