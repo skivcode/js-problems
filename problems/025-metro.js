@@ -17,7 +17,25 @@
  * @returns {number}
  */
 function metro(x, y) {
-    return undefined;
+    let altx = x;
+    let alty = y;
+    if (x > 7) {
+        altx = x - 15;
+    }
+    if (y > 7) {
+        alty = y - 15;
+    }
+    if ((altx > 0 && alty > 0  ) || (altx < 0 && alty < 0 )) {
+        return Math.abs(Math.abs(altx) - Math.abs(alty))-1;
+    }
+    else if( (altx===1 || alty===1)){
+        return Math.abs(Math.abs(altx) - Math.abs(alty))-1;
+    }
+    else if( (altx===7 || alty===7)){
+        return Math.abs(Math.abs(altx) - Math.abs(alty));
+    }
+    return Math.abs(Math.abs(altx) - Math.abs(alty))+1;
+
 }
 
 module.exports = metro;
