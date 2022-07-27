@@ -11,9 +11,7 @@
  */
 
 function flatten(array) {  
-    return array.reduce((result, item)=> {
-        return result.concat(Array.isArray(item) ? flatten(item) : item);
-    }, []);
+    return array.flat(Infinity)
 }
 
 module.exports = flatten;
